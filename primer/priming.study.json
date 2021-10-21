@@ -403,7 +403,11 @@
           "label": "",
           "event": "keypress",
           "target": "",
-          "filter": "z,m"
+          "filter": "z"
+        },
+        {
+          "event": "keypress",
+          "filter": "m"
         }
       ],
       "parameters": [
@@ -421,7 +425,7 @@
         }
       ],
       "title": "Respuesta",
-      "_tab": "Content"
+      "_tab": "Behavior"
     },
     "8": {
       "id": "8",
