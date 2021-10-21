@@ -312,7 +312,11 @@
           "label": "",
           "event": "keypress",
           "target": "",
-          "filter": "z,m"
+          "filter": "z"
+        },
+        {
+          "event": "keypress",
+          "filter": "m"
         }
       ],
       "parameters": [
@@ -330,7 +334,7 @@
         }
       ],
       "title": "Screen",
-      "_tab": "Content"
+      "_tab": "Behavior"
     },
     "13": {
       "id": "13",
@@ -644,7 +648,11 @@
           "label": "",
           "event": "keypress",
           "target": "",
-          "filter": "z,m"
+          "filter": "z"
+        },
+        {
+          "event": "keypress",
+          "filter": "m"
         }
       ],
       "parameters": [
@@ -662,7 +670,7 @@
         }
       ],
       "title": "Screen",
-      "_tab": "Content"
+      "_tab": "Behavior"
     },
     "17": {
       "id": "17",
@@ -1090,7 +1098,11 @@
           "label": "",
           "event": "keypress",
           "target": "",
-          "filter": "z,m"
+          "filter": "z"
+        },
+        {
+          "filter": "m",
+          "event": "keypress"
         }
       ],
       "parameters": [
@@ -1108,7 +1120,7 @@
         }
       ],
       "title": "Screen",
-      "_tab": "Content"
+      "_tab": "Behavior"
     },
     "root": {
       "id": "root",
