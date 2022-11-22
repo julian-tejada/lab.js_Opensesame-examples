@@ -1,0 +1,348 @@
+---
+API: 2.1
+OpenSesame: 3.3.12b1
+Platform: posix
+---
+set width 1024
+set uniform_coordinates yes
+set title "New experiment"
+set subject_parity even
+set subject_nr 0
+set start experiment
+set sound_sample_size -16
+set sound_freq 48000
+set sound_channels 2
+set sound_buf_size 1024
+set sampler_backend legacy
+set round_decimals 2
+set mouse_backend legacy
+set keyboard_backend legacy
+set height 768
+set fullscreen no
+set form_clicks no
+set foreground white
+set font_underline no
+set font_size 18
+set font_italic no
+set font_family mono
+set font_bold no
+set experiment_path "/home/julan/Documents"
+set disable_garbage_collection yes
+set description "The main experiment item"
+set coordinates uniform
+set compensation 0
+set color_backend legacy
+set clock_backend legacy
+set canvas_backend legacy
+set background black
+
+define pygaze_init Calibration
+	set tracker_type "Simple dummy"
+	set tobiiglasses_udpport 49152
+	set tobiiglasses_address "192.168.71.50"
+	set smi_send_port 4444
+	set smi_recv_port 5555
+	set smi_ip "127.0.0.1"
+	set sacc_vel_thr 35
+	set sacc_acc_thr 9500
+	set eyelink_pupil_size_mode area
+	set eyelink_force_drift_correct yes
+	set description "Initialize and calibrate eye tracker"
+	set calibrate yes
+	set calbeep yes
+	set alea_api_key "Contact Alea for an API key"
+	set alea_animated_calibration no
+	set _logfile automatic
+
+define sketchpad Instructions
+	set start_response_interval no
+	set reset_variables no
+	set duration 0
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Three words will appear on the screen, two of them in the superior corners and the third in the middle. Your task consist in sort the middle word in the appropriate category represented by the words presented on the screen corners. If you tough that the middle word belongs to the category of the superior right word press m, or if you tough that the middle word belongs to the category of the superior left word press z." x=0 y=0 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="== Press the space bar to start ==" x=0 y=256 z_index=0
+
+define sketchpad Trial_1_stimulus
+	set duration 0
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[left]" x=-320 y=-256 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[right]" x=320 y=-256 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[middle]" x=0 y=0 z_index=0
+
+define sketchpad Trial_2_instrucctions
+	set duration 0
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Please sort the middle word in the appropriate category represented by the words presented on the screen corners.  If you tough that the middle word belongs to the category of the superior right word press m, or if you tough that the middle word belongs to the category of the superior left word press z, and please respond as quickly as possible." x=0.0 y=-64.0 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="== Press the space bar to start ==" x=0.0 y=192.0 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Now that you have already known the task, let's change the stimuli from emotions to names. " x=0 y=-288 z_index=0
+
+define sketchpad Trial_2_stimulus
+	set duration 0
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[left]" x=-320 y=-256 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[right]" x=320 y=-256 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[middle]" x=0 y=0 z_index=0
+
+define sketchpad Trial_2_stimulus_1
+	set duration 0
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[left1]" x=-320 y=-256 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[right1]" x=320 y=-256 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[left2]" x=-320 y=-214 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[right2]" x=320 y=-214 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=mono font_italic=no font_size=35 html=yes show_if=always text="[middle]" x=0 y=0 z_index=0
+
+define sketchpad Trial_3_instrucctions
+	set duration 0
+	set description "Displays stimuli"
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Please sort the middle word in the appropriate category represented by the words presented on the screen corners.  If you tough that the middle word belongs to the category of the superior right word press m, or if you tough that the middle word belongs to the category of the superior left word press z, and please respond as quickly as possible." x=0.0 y=-64.0 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="== Press the space bar to start ==" x=0 y=192 z_index=0
+	draw textline center=1 color=white font_bold=no font_family=serif font_italic=no font_size=32 html=yes show_if=always text="Now let's mix both stimuli. " x=0 y=-288 z_index=0
+
+define sequence experiment
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run Calibration always
+	run getting_started always
+	run Instructions always
+	run keyboard_instructions1 always
+	run loop_trial_1 always
+	run Trial_2_instrucctions always
+	run keyboard_instructions2 always
+	run loop_trial_2 always
+	run Trial_3_instrucctions always
+	run keyboard_instructions3 always
+	run loop_trial_3 always
+
+define notepad getting_started
+	__note__
+	Welcome to OpenSesame 3.3 "Lentiform Loewenfeld"!
+	If you are new to OpenSesame, it is a good idea to follow one of the tutorials,
+	which can be found on the documentation site:
+	- <http://osdoc.cogsci.nl/>
+	You can also check out the examples. These can be opened via:
+	- Menu -> Tools -> Example experiments.
+	And feel free to ask for help on the forum:
+	- <http://forum.cogsci.nl/>
+	Have fun with OpenSesame!
+	__end__
+	set description "A simple notepad to document your experiment. This plug-in does nothing."
+
+define keyboard_response keyboard_instructions1
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses space
+
+define keyboard_response keyboard_instructions2
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses space
+
+define keyboard_response keyboard_instructions3
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses space
+
+define loop loop_trial_1
+	set source_file ""
+	set source table
+	set repeat 1
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 6
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 left Pleasant
+	setcycle 0 right Unpleasant
+	setcycle 0 middle Suffering
+	setcycle 1 left Pleasant
+	setcycle 1 right Unpleasant
+	setcycle 1 middle Happiness
+	setcycle 2 left Pleasant
+	setcycle 2 right Unpleasant
+	setcycle 2 middle Sadness
+	setcycle 3 left Unpleasant
+	setcycle 3 right Pleasant
+	setcycle 3 middle Fear
+	setcycle 4 left Unpleasant
+	setcycle 4 right Pleasant
+	setcycle 4 middle Cheerfulness
+	setcycle 5 left Unpleasant
+	setcycle 5 right Pleasant
+	setcycle 5 middle Disgust
+	run sequence_t1
+
+define loop loop_trial_2
+	set source_file ""
+	set source table
+	set repeat 1
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 6
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 left Black
+	setcycle 0 right White
+	setcycle 0 middle Annemie
+	setcycle 1 left Black
+	setcycle 1 right White
+	setcycle 1 middle Arabella
+	setcycle 2 left Black
+	setcycle 2 right White
+	setcycle 2 middle Omar
+	setcycle 3 left White
+	setcycle 3 right Black
+	setcycle 3 middle Hamza
+	setcycle 4 left White
+	setcycle 4 right Black
+	setcycle 4 middle Khalid
+	setcycle 5 left White
+	setcycle 5 right Black
+	setcycle 5 middle Barend
+	run sequence_t2
+
+define loop loop_trial_3
+	set source_file ""
+	set source table
+	set repeat 1
+	set order random
+	set description "Repeatedly runs another item"
+	set cycles 6
+	set continuous no
+	set break_if_on_first yes
+	set break_if never
+	setcycle 0 left1 Black
+	setcycle 0 right1 White
+	setcycle 0 middle Annemie
+	setcycle 0 left2 Pleasant
+	setcycle 0 right2 Unpleasant
+	setcycle 1 left1 Black
+	setcycle 1 right1 White
+	setcycle 1 middle Arabella
+	setcycle 1 left2 Pleasant
+	setcycle 1 right2 Unpleasant
+	setcycle 2 left1 Black
+	setcycle 2 right1 White
+	setcycle 2 middle Omar
+	setcycle 2 left2 Pleasant
+	setcycle 2 right2 Unpleasant
+	setcycle 3 left1 White
+	setcycle 3 right1 Black
+	setcycle 3 middle Hamza
+	setcycle 3 left2 Unpleasant
+	setcycle 3 right2 Pleasant
+	setcycle 4 left1 White
+	setcycle 4 right1 Black
+	setcycle 4 middle Khalid
+	setcycle 4 left2 Unpleasant
+	setcycle 4 right2 Pleasant
+	setcycle 5 left1 White
+	setcycle 5 right1 Black
+	setcycle 5 middle Barend
+	setcycle 5 left2 Unpleasant
+	setcycle 5 right2 Pleasant
+	run sequence_t3
+
+define logger new_logger
+	set description "Logs experimental data"
+	set auto_log no
+	log response_trial_1_keyboard_response
+	log response_time_trial_1_keyboard_response
+	log left
+	log right
+	log middle
+	log response_trial_2_keyboard_response
+	log response_time_trial_2_keyboard_response
+	log left1
+	log left2
+	log right1
+	log right2
+	log response_trial_3_keyboard_response
+	log response_time_trial_3_keyboard_response
+
+define pygaze_start_recording new_pygaze_start_recording
+	set status_msg "start_trial_t1_[left]_[right]"
+	set description "Puts the eye tracker into recording mode"
+
+define pygaze_start_recording new_pygaze_start_recording_1
+	set status_msg "start_trial_t2_[left]_[right]"
+	set description "Puts the eye tracker into recording mode"
+
+define pygaze_start_recording new_pygaze_start_recording_2
+	set status_msg "start_trial_t3_[left1]_[right1]_[left2]_[right2]"
+	set description "Puts the eye tracker into recording mode"
+
+define pygaze_stop_recording new_pygaze_stop_recording
+	set status_msg stop_trial
+	set description "Stops recording of eye tracking data"
+
+define pygaze_stop_recording new_pygaze_stop_recording_1
+	set status_msg stop_trial
+	set description "Stops recording of eye tracking data"
+
+define pygaze_stop_recording new_pygaze_stop_recording_2
+	set status_msg stop_trial
+	set description "Stops recording of eye tracking data"
+
+define sequence sequence_t1
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run new_pygaze_start_recording always
+	run Trial_1_stimulus always
+	run trial_1_keyboard_response always
+	run new_pygaze_stop_recording always
+	run new_logger always
+
+define sequence sequence_t2
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run new_pygaze_start_recording_1 always
+	run Trial_2_stimulus always
+	run trial_2_keyboard_response always
+	run new_pygaze_stop_recording_1 always
+	run new_logger always
+
+define sequence sequence_t3
+	set flush_keyboard yes
+	set description "Runs a number of items in sequence"
+	run new_pygaze_start_recording_2 always
+	run Trial_2_stimulus_1 always
+	run trial_3_keyboard_response always
+	run new_pygaze_stop_recording_2 always
+	run new_logger always
+
+define keyboard_response trial_1_keyboard_response
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses "z;m"
+
+define keyboard_response trial_2_keyboard_response
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses "z;m"
+
+define keyboard_response trial_3_keyboard_response
+	set timeout infinite
+	set flush yes
+	set event_type keypress
+	set duration keypress
+	set description "Collects keyboard responses"
+	set allowed_responses "z;m"
+
